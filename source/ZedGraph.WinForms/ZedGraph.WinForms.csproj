@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net35;net40;net45;net46;net47</TargetFrameworks>
+	  <VersionPrefix>6.1.0</VersionPrefix>
+    <TargetFrameworks>net48;net8.0-windows</TargetFrameworks>
     <RootNamespace>ZedGraph</RootNamespace>
     <AssemblyName>ZedGraph.WinForms</AssemblyName>
-
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\zedgraphkey.snk</AssemblyOriginatorKeyFile>
 
@@ -15,6 +17,8 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net35|AnyCPU'">
@@ -33,9 +37,9 @@
     <DocumentationFile>bin\Release\net47\ZedGraph.WinForms.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="GitVersionTask" Version="3.6.5" />
